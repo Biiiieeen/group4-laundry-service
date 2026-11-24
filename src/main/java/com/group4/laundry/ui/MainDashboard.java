@@ -17,7 +17,6 @@ public class MainDashboard extends javax.swing.JFrame {
         serviceFormButton = new javax.swing.JButton();
         addOnFormButton = new javax.swing.JButton();
         orderFormButton = new javax.swing.JButton();
-        billingFormButton = new javax.swing.JButton();
         processingFormButton = new javax.swing.JButton();
         shopPolicyFormButton = new javax.swing.JButton();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -26,7 +25,7 @@ public class MainDashboard extends javax.swing.JFrame {
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("Laundry Service Management System");
         getContentPane().add(titleLabel, java.awt.BorderLayout.NORTH);
-        navigationPanel.setLayout(new java.awt.GridLayout(7, 1, 0, 8));
+        navigationPanel.setLayout(new java.awt.GridLayout(6, 1, 0, 8));
         customerFormButton.setText("Customers");
         customerFormButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,20 +47,13 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         });
         navigationPanel.add(addOnFormButton);
-        orderFormButton.setText("Orders");
+        orderFormButton.setText("Orders & Billing");
         orderFormButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orderFormButtonActionPerformed(evt);
             }
         });
         navigationPanel.add(orderFormButton);
-        billingFormButton.setText("Billing");
-        billingFormButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                billingFormButtonActionPerformed(evt);
-            }
-        });
-        navigationPanel.add(billingFormButton);
         processingFormButton.setText("Processing");
         processingFormButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,9 +86,6 @@ public class MainDashboard extends javax.swing.JFrame {
     private void orderFormButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderFormButtonActionPerformed
         new OrderForm().setVisible(true);
     }//GEN-LAST:event_orderFormButtonActionPerformed
-    private void billingFormButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billingFormButtonActionPerformed
-        new BillingForm().setVisible(true);
-    }//GEN-LAST:event_billingFormButtonActionPerformed
     private void processingFormButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processingFormButtonActionPerformed
         new ProcessingForm().setVisible(true);
     }//GEN-LAST:event_processingFormButtonActionPerformed
@@ -111,7 +100,6 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JButton serviceFormButton;
     private javax.swing.JButton addOnFormButton;
     private javax.swing.JButton orderFormButton;
-    private javax.swing.JButton billingFormButton;
     private javax.swing.JButton processingFormButton;
     private javax.swing.JButton shopPolicyFormButton;
     // End of variables declaration//GEN-END:variables

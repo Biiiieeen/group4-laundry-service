@@ -52,7 +52,9 @@ For HTTPS pushes, use Git Credential Manager's browser sign-in when prompted. Gi
 5. Right-click the project > Run, or press F6 with the correct project selected.
 6. Check that each dashboard button opens its empty module window.
 
-Main class: `com.group4.laundry.Main`. All seven module forms are deliberately empty. Closing a module leaves the dashboard open; closing the dashboard exits the application. No MySQL connection is required for this navigation.
+Main class: `com.group4.laundry.Main`. All six module forms are deliberately empty. Closing a module leaves the dashboard open; closing the dashboard exits the application. No MySQL connection is required for this navigation.
+
+The Orders & Billing button opens one shared OrderForm for HEDHREIN and SHANAIAH. They coordinate sequential edits to that form pair; billing has no separate JFrame.
 
 Open a module's Java file and choose Design to edit it with the Swing Palette. Its `.form` file must stay beside the Java file. The dashboard also has a matching form file.
 

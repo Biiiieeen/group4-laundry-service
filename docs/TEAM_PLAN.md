@@ -1,18 +1,22 @@
 # Team assignments and implementation order
 
-The starter has a working navigation dashboard, seven empty module forms, a connection helper and a seven-table schema. Planned functionality below remains for the team to implement. Replace member numbers with actual names before assigning work.
+The starter has a working navigation dashboard, six empty module forms, a connection helper and a seven-table schema. Planned functionality below remains for the team to implement. Assignments below use the agreed member names.
 
 ## Ownership and initial branches
 
 | Member | Initial branch | Screen | Responsibility |
 | --- | --- | --- | --- |
-| 1 | `codex/customers` | CustomerForm | Customer creation, search, editing and safe deletion |
-| 2 | `codex/services` | ServiceForm | Service catalog, per-kg prices and capacities |
-| 3 | `codex/add-ons` | AddOnForm | Extra items, units, prices and availability |
-| 4 | `codex/orders` | OrderForm | Bookings, service lines, extra selections and atomic saves |
-| 5 | `codex/billing` | BillingForm | Shared charge calculation and bill display |
-| 6 | `codex/processing` | ProcessingForm | Status transitions, ready time and pickup |
-| 7 | `codex/policies-dashboard` | ShopPolicyForm, MainDashboard | Policies, shared navigation and integration coordination |
+| 1 — HENNIE | `codex/customers` | CustomerForm | Customer creation, search, editing and safe deletion |
+| 2 — GHAB | `codex/services` | ServiceForm | Service catalog, per-kg prices and capacities |
+| 3 — CARRIE ANN | `codex/add-ons` | AddOnForm | Extra items, units, prices and availability |
+| 4 — HEDHREIN | `codex/orders` | OrderForm (shared) | Bookings, service lines, atomic saves and shared-screen integration |
+| 5 — SHANAIAH | `codex/billing` | OrderForm (shared) | Extra selections, shared charge calculation and bill display |
+| 6 — ANDRIE | `codex/processing` | ProcessingForm | Status transitions, ready time and pickup |
+| 7 — VIN | `codex/policies-dashboard` | ShopPolicyForm, MainDashboard | Policies, shared navigation and integration coordination |
+
+HEDHREIN and SHANAIAH share one Orders & Billing JFrame: OrderForm.java and OrderForm.form. HEDHREIN coordinates the form pair and owns the atomic order save; SHANAIAH owns BillingService and extra/bill calculation logic. Agree the layout/interfaces together. Implement supporting classes in separate files in parallel, but hand off form edits one member at a time after committing, reviewing, merging and synchronizing. Their initial branches remain separate; both contribute to the same screen. No separate BillingForm is used.
+
+GHAB owns service catalog entries (price per kg and capacity). CARRIE ANN owns add-on catalog entries (price per unit and active availability). Their CRUD patterns are similar, but their data and responsibilities differ, so they retain separate forms.
 
 Each member owns their module's supporting model, DAO and service classes too. These branches are naming assignments, not pre-created branches. Create them using CONTRIBUTING.md. Once merged, create a fresh branch for subsequent tasks. Agree on a single owner for each shared file/class; consult that owner before editing it.
 
@@ -21,8 +25,8 @@ Each member owns their module's supporting model, DAO and service classes too. T
 1. **Everyone, coordinated by Member 7:** verify all machines build/run and use the same schema. Agree on screen conventions, rules and shared method inputs/outputs. Record decisions in an issue or this document before implementation.
 2. **Member 1:** finish Customers end to end as the example. Include its form pair, Customer model, CustomerDAO and CustomerService. Review the approach as a team. Completion: create, search and edit fictional records; restart and verify persistence; check invalid input and referenced-record deletion handling.
 3. **Members 2, 3 and 7 in parallel:** finish Services, Add-ons and Policies following that example. Completion: valid catalogs/policies can be saved, reloaded and used by orders. Prevent deleting records already referenced by orders.
-4. **Member 4:** complete Orders after the reference modules are ready. Save an order and all details/extras in one transaction. Completion: reload a multi-line order with extras after restart; simulate a failed save and confirm no partial order remains.
-5. **Members 5 and 6 in parallel:** complete Billing and Processing using saved orders and agreed rules. Member 5 owns the shared billing calculation; Processing calls it if required rather than duplicating it. Completion: both screens agree on the same order's values and permitted actions.
+4. **Members 4 and 5:** agree on the shared Orders & Billing screen and models. Member 4 completes booking/persistence while Member 5 builds extra validation and BillingService in separate files. Integrate edits to the form pair sequentially after the reference modules are ready. Save an order and all details/extras in one transaction. Completion: reload a multi-line order with extras after restart; simulate a failed save and confirm no partial order remains.
+5. **Members 5 and 6 in parallel:** integrate billing into the shared OrderForm and complete Processing using saved orders and agreed rules. Member 5 owns the shared billing calculation; Processing calls it if required rather than duplicating it. Completion: OrderForm and ProcessingForm agree on the same order's values and permitted actions.
 6. **Everyone, coordinated by Member 7:** run the whole workflow and resolve integration issues. Each member explains their code and supplies demonstration steps.
 
 Everyone can design their own form early. Members 4/5/6 can agree on interfaces while the reference modules are being built; avoid independently inventing incompatible order models or SQL queries for shared behavior.
@@ -32,7 +36,7 @@ Everyone can design their own form early. Members 4/5/6 can agree on interfaces 
 | Package | Role | Current / future examples |
 | --- | --- | --- |
 | `com.group4.laundry` | Startup | Existing Main.java |
-| `.ui` | Controls, display, event handlers | Existing eight Java/form pairs |
+| `.ui` | Controls, display, event handlers | Existing seven Java/form pairs |
 | `.config` | Shared connection setup | Existing DatabaseConnection.java |
 | `.model` | Data carried between layers | Future Customer.java, Order.java |
 | `.dao` | SQL and record retrieval/persistence | Future CustomerDAO.java, OrderDAO.java |
