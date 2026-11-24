@@ -1,0 +1,6 @@
+# Copy to config/database.properties (ignored by Git).
+# Or set LAUNDRY_DB_URL, LAUNDRY_DB_USER, LAUNDRY_DB_PASSWORD.
+# Environment variables override the matching local property.
+db.url=jdbc:mysql://localhost:3306/laundry_db
+db.user=
+db.password=
