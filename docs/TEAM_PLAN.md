@@ -12,7 +12,7 @@ The starter has a working navigation dashboard, six empty module forms, a connec
 | 4 — HEDHREIN | `codex/orders` | OrderForm (shared) | Bookings, service lines, atomic saves and shared-screen integration |
 | 5 — SHANAIAH | `codex/billing` | OrderForm (shared) | Extra selections, shared charge calculation and bill display |
 | 6 — ANDRIE | `codex/processing` | ProcessingForm | Status transitions, ready time and pickup |
-| 7 — VIN | `codex/policies-dashboard` | ShopPolicyForm, MainDashboard | Policies, shared navigation and integration coordination |
+| 7 — VN | `codex/policies-dashboard` | ShopPolicyForm, MainDashboard | Policies, shared navigation and integration coordination |
 
 HEDHREIN and SHANAIAH share one Orders & Billing JFrame: OrderForm.java and OrderForm.form. HEDHREIN coordinates the form pair and owns the atomic order save; SHANAIAH owns BillingService and extra/bill calculation logic. Agree the layout/interfaces together. Implement supporting classes in separate files in parallel, but hand off form edits one member at a time after committing, reviewing, merging and synchronizing. Their initial branches remain separate; both contribute to the same screen. No separate BillingForm is used.
 

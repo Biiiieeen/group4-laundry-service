@@ -43,9 +43,9 @@ Each package-info.java explains the package and keeps it present in Git. Model, 
 | HEDHREIN | OrderForm.java / OrderForm.form (shared Orders & Billing) | orders, order_details, order_detail_add_ons |
 | SHANAIAH | OrderForm.java / OrderForm.form (shared Orders & Billing) | orders, order_details, order_detail_add_ons, shop_policies |
 | ANDRIE | ProcessingForm.java / ProcessingForm.form (Processing) | orders, shop_policies |
-| VIN | ShopPolicyForm.java / ShopPolicyForm.form (Shop Policies) | shop_policies |
+| VN | ShopPolicyForm.java / ShopPolicyForm.form (Shop Policies) | shop_policies |
 
-VIN also coordinates MainDashboard.java / MainDashboard.form. Customers manages customer records; Services manages prices and load capacity; Add-ons manages extra items; HEDHREIN and SHANAIAH share one OrderForm for bookings, details, extras and billing; Processing manages progress and pickup; Shop Policies manages storage terms. These describe future responsibilities, not implemented features.
+VN also coordinates MainDashboard.java / MainDashboard.form. Customers manages customer records; Services manages prices and load capacity; Add-ons manages extra items; HEDHREIN and SHANAIAH share one OrderForm for bookings, details, extras and billing; Processing manages progress and pickup; Shop Policies manages storage terms. These describe future responsibilities, not implemented features.
 
 Only dashboard navigation is implemented. Six module canvases are empty. Closing a module leaves the dashboard open. There is no login, CRUD, payment handling or billing calculation yet.
 
@@ -67,10 +67,10 @@ Copy config/database.properties.example to config/database.properties and enter 
 
 ## Review checklist
 
-Build the project, run the dashboard, check all six buttons, and close each module. Open all seven pairs in NetBeans Design before presenting. Verify package names match this guide. Members submit pull requests for VIN’s final review before merging.
+Build the project, run the dashboard, check all six buttons, and close each module. Open all seven pairs in NetBeans Design before presenting. Verify package names match this guide. Members submit pull requests for VN’s final review before merging.
 
 Suggested public repository description: Group 4 Java Swing and MySQL project starter with NetBeans JFrame forms, organized source packages, and module responsibilities.
 
 ## Leader review workflow
 
-An active main-branch ruleset requires pull requests with one approving collaborator review, dismisses stale approvals after new changes, and requires approval of the latest reviewable push by someone other than its pusher. Force pushes and main deletion are blocked for non-exempt users. Biiiieeen (VIN) is the sole explicit always-bypass account and can merge without waiting for another approval. Members still submit PRs for VIN’s final review; the exception does not authorize members to bypass review. Keep changes small, explain actual checks, and coordinate shared form edits.
+An active main-branch ruleset requires pull requests with one approving collaborator review, dismisses stale approvals after new changes, and requires approval of the latest reviewable push by someone other than its pusher. Force pushes and main deletion are blocked for non-exempt users. Biiiieeen (VN) is the sole explicit always-bypass account and can merge without waiting for another approval. Members still submit PRs for VN’s final review; the exception does not authorize members to bypass review. Keep changes small, explain actual checks, and coordinate shared form edits.
