@@ -73,4 +73,4 @@ Suggested public repository description: Group 4 Java Swing and MySQL project st
 
 ## Leader review workflow
 
-The mandatory approval ruleset was removed at VIN’s request. Members still submit pull requests and wait for VIN’s final review before merging. GitHub does not enforce an approval count or block direct pushes under a ruleset. Do not force-push shared work. Keep changes small, explain actual checks, and coordinate shared form edits.
+An active main-branch ruleset requires pull requests with one approving collaborator review, dismisses stale approvals after new changes, and requires approval of the latest reviewable push by someone other than its pusher. Force pushes and main deletion are blocked for non-exempt users. Biiiieeen (VIN) is the sole explicit always-bypass account and can merge without waiting for another approval. Members still submit PRs for VIN’s final review; the exception does not authorize members to bypass review. Keep changes small, explain actual checks, and coordinate shared form edits.
