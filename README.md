@@ -1,6 +1,6 @@
 # Group 4 Laundry Service Starter
 
-Java Swing / MySQL group project starter for Apache NetBeans. A basic dashboard opens seven empty module windows. Every screen has matching .java and .form files. Teammates implement their assigned controls and functionality.
+Java Swing / MySQL group project starter for Apache NetBeans. A basic dashboard opens six empty module windows. Every screen has matching .java and .form files. Teammates implement their assigned controls and functionality.
 
 ## Start here, team
 
@@ -25,7 +25,7 @@ Folders below are under src/main/java. NetBeans displays them under Source Packa
 | Package | Contents | Purpose |
 | --- | --- | --- |
 | com.group4.laundry | Main.java | Start Swing on the event dispatch thread |
-| com.group4.laundry.ui | Eight JFrame .java/.form pairs and package-info.java | Dashboard and module designs |
+| com.group4.laundry.ui | Seven JFrame .java/.form pairs and package-info.java | Dashboard and module designs |
 | com.group4.laundry.config | DatabaseConnection.java and package-info.java | Shared MySQL connection helper |
 | com.group4.laundry.model | package-info.java | Reserved for classes representing database records |
 | com.group4.laundry.dao | package-info.java | Reserved for database queries and CRUD |
@@ -37,17 +37,19 @@ Each package-info.java explains the package and keeps it present in Git. Model, 
 
 | Member | Form pair | Planned tables |
 | --- | --- | --- |
-| 1 | CustomerForm.java / CustomerForm.form (Customers) | customers |
-| 2 | ServiceForm.java / ServiceForm.form (Services) | services |
-| 3 | AddOnForm.java / AddOnForm.form (Add-ons) | add_ons |
-| 4 | OrderForm.java / OrderForm.form (Orders) | orders, order_details, order_detail_add_ons |
-| 5 | BillingForm.java / BillingForm.form (Billing) | orders, order_details, order_detail_add_ons, shop_policies |
-| 6 | ProcessingForm.java / ProcessingForm.form (Processing) | orders, shop_policies |
-| 7 | ShopPolicyForm.java / ShopPolicyForm.form (Shop Policies) | shop_policies |
+| HENNIE | CustomerForm.java / CustomerForm.form (Customers) | customers |
+| GHAB | ServiceForm.java / ServiceForm.form (Services) | services |
+| CARRIE ANN | AddOnForm.java / AddOnForm.form (Add-ons) | add_ons |
+| HEDHREIN | OrderForm.java / OrderForm.form (shared Orders & Billing) | orders, order_details, order_detail_add_ons |
+| SHANAIAH | OrderForm.java / OrderForm.form (shared Orders & Billing) | orders, order_details, order_detail_add_ons, shop_policies |
+| ANDRIE | ProcessingForm.java / ProcessingForm.form (Processing) | orders, shop_policies |
+| VIN | ShopPolicyForm.java / ShopPolicyForm.form (Shop Policies) | shop_policies |
 
-Member 7 also coordinates MainDashboard.java / MainDashboard.form. Replace member numbers with your names. Customers manages customer records; Services manages prices and load capacity; Add-ons manages extra items; Orders manages bookings and details; Billing computes charges; Processing manages progress and pickup; Shop Policies manages storage terms. These describe future responsibilities, not implemented features.
+VIN also coordinates MainDashboard.java / MainDashboard.form. Customers manages customer records; Services manages prices and load capacity; Add-ons manages extra items; HEDHREIN and SHANAIAH share one OrderForm for bookings, details, extras and billing; Processing manages progress and pickup; Shop Policies manages storage terms. These describe future responsibilities, not implemented features.
 
-Only dashboard navigation is implemented. Seven module canvases are empty. Closing a module leaves the dashboard open. There is no login, CRUD, payment handling or billing calculation yet.
+Only dashboard navigation is implemented. Six module canvases are empty. Closing a module leaves the dashboard open. There is no login, CRUD, payment handling or billing calculation yet.
+
+HEDHREIN coordinates edits to the shared OrderForm pair and owns the complete order transaction. SHANAIAH owns BillingService and the add-on/bill calculation logic used by that screen. Agree on the layout together and hand off form edits sequentially; do not edit the same .java/.form pair concurrently. There is no separate BillingForm. The shared canvas remains empty for the pair to implement. GHAB and CARRIE ANN keep separate catalog forms because services use per-kg pricing/capacity while add-ons use per-unit pricing/availability.
 
 ## Manual NetBeans workflow
 
@@ -65,10 +67,10 @@ Copy config/database.properties.example to config/database.properties and enter 
 
 ## Review checklist
 
-Build the project, run the dashboard, check all seven buttons, and close each module. Open all eight pairs in NetBeans Design before presenting. Verify package names match this guide. Changes to main require a pull request and at least one approving collaborator review.
+Build the project, run the dashboard, check all six buttons, and close each module. Open all seven pairs in NetBeans Design before presenting. Verify package names match this guide. Members submit pull requests for VIN’s final review before merging.
 
 Suggested public repository description: Group 4 Java Swing and MySQL project starter with NetBeans JFrame forms, organized source packages, and module responsibilities.
 
-## Main branch review rule
+## Leader review workflow
 
-The main branch is protected by an active GitHub ruleset: pull requests require one approval, new changes dismiss stale approvals, and the latest reviewable push must be approved by someone other than its pusher. Force pushes and branch deletion are blocked. No bypass actors are configured. Invite teammates as collaborators so they can provide qualifying reviews; authors cannot approve their own pull requests. Repository administrators can edit repository settings, so retain this ruleset.
+The mandatory approval ruleset was removed at VIN’s request. Members still submit pull requests and wait for VIN’s final review before merging. GitHub does not enforce an approval count or block direct pushes under a ruleset. Do not force-push shared work. Keep changes small, explain actual checks, and coordinate shared form edits.

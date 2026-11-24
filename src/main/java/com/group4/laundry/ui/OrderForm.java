@@ -1,5 +1,8 @@
 package com.group4.laundry.ui;
-/** Empty module. Planned tables: orders, order_details, order_detail_add_ons. */
+/** Shared empty Orders and Billing screen for HEDHREIN and SHANAIAH.
+ * HEDHREIN coordinates form layout and order persistence; SHANAIAH owns billing
+ * calculations and agrees on add-on/bill controls before editing this form pair.
+ */
 public class OrderForm extends javax.swing.JFrame {
     public OrderForm() {
         initComponents();
@@ -9,7 +12,7 @@ public class OrderForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Orders | Group 4");
+        setTitle("Orders & Billing | Group 4");
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 720, Short.MAX_VALUE));

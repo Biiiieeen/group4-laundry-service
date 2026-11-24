@@ -53,7 +53,7 @@ git push -u origin main
 
 If origin already exists, inspect `git remote -v` rather than adding it again or overwriting it blindly. If the remote already has commits, stop and reconcile the histories with the leader; do not force-push.
 
-Invite teammates through repository Settings > Collaborators and have them accept. See [GitHub's collaborator instructions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository). Share the URL and assign member names in the work plan. An active ruleset on `main` requires one approving review, dismisses stale approvals when new changes are pushed, and requires the latest reviewable push to be approved by someone other than its pusher. No bypass actors are configured; force pushes and main deletion are blocked. Invite another collaborator before expecting a PR to be mergeable. Repository administrators can change settings, so do not disable the ruleset to merge a PR. Do not make a build check mandatory until an actual CI workflow exists.
+Invite teammates through repository Settings > Collaborators and have them accept. See [GitHub's collaborator instructions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository). Share the URL and assign member names in the work plan. The leader removed the mandatory approval ruleset. Members still submit PRs for VIN’s final review; there is no GitHub-enforced approval count or ruleset restriction on direct pushes. Do not merge without the leader’s review or force-push shared work. Do not make a build check mandatory until an actual CI workflow exists.
 
 ## 1. Create a task branch before editing
 
@@ -153,10 +153,10 @@ Confirm GitHub shows your latest commit on your task branch. Do not push your fe
 2. Set the base to `main` and compare to your task branch, such as `codex/customers`.
 3. Give the PR a clear title. Fill in the supplied template: behavior added, manual checks, and any database/shared-code changes.
 4. Review Files changed. Confirm no unrelated module changes, local credentials, real records or build output are included. Include both form files.
-5. Ask the coordinator or another member to review. A draft PR is appropriate for unfinished work; mark it ready when complete.
+5. Ask VIN to review. A draft PR is appropriate for unfinished work; mark it ready when complete.
 6. Make requested corrections locally, commit, and push to the same branch. The open PR updates automatically.
 
-Pushing work does not mean it is approved. Before merge, the reviewer checks code/package placement, builds the branch, checks the feature and its Design view, and verifies that integration still works. The coordinator merges after review, preferably with a merge commit for this team's straightforward history. Do not merge your own PR without the agreed review.
+Pushing work does not mean it is approved. Before merge, the reviewer checks code/package placement, builds the branch, checks the feature and its Design view, and verifies that integration still works. VIN has final review and merge authority, preferably using a merge commit for this team’s straightforward history. Members should not merge their own PRs without the leader’s authorization.
 
 ## 7. After your PR is merged
 
@@ -228,4 +228,4 @@ If you started the merge with a clean tree and want to return to the pre-merge s
 - [ ] Database changes are agreed, documented, and reproducible on another workstation.
 - [ ] No credentials, real records or generated build files are included.
 - [ ] Documentation reflects the current feature and remaining limitations.
-- [ ] Another member reviewed the PR.
+- [ ] VIN reviewed the PR and authorized merging.

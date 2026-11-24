@@ -17,3 +17,5 @@ List affected shared interfaces, schema changes, migration/import steps and coor
 - [ ] Relevant persistence, invalid-input and failure cases checked.
 - [ ] No local credentials, real records or target files included.
 - [ ] Documentation updated; unfinished behavior clearly identified.
+
+- [ ] Ready for VIN’s final review; shared OrderForm edits coordinated if applicable.
