@@ -48,7 +48,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleLabel.setText("Laundry Service Management System");
+        titleLabel.setText("LAUNDRY SERVICE MANAGEMENT SYSTEM");
         titleLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(12, 12, 10, 10));
         getContentPane().add(titleLabel, java.awt.BorderLayout.NORTH);
 
