@@ -20,6 +20,8 @@ public class ShopPolicyForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        policySectionPanel = new javax.swing.JPanel();
+        policyDetailsLabel = new javax.swing.JLabel();
         pnlPolicyDetails = new javax.swing.JPanel();
         lblFreeStorageDays1 = new javax.swing.JLabel();
         txtPolicyName = new javax.swing.JTextField();
@@ -49,7 +51,12 @@ public class ShopPolicyForm extends javax.swing.JFrame {
         jLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(12, 12, 12, 12));
         getContentPane().add(jLabel1);
 
-        pnlPolicyDetails.setBorder(javax.swing.BorderFactory.createTitledBorder("Policy Details"));
+        policySectionPanel.setLayout(new java.awt.BorderLayout(0, 6));
+        policyDetailsLabel.setFont(new java.awt.Font("Segoe UI", 1, 14));
+        policyDetailsLabel.setText("Policy Details");
+        policySectionPanel.add(policyDetailsLabel, java.awt.BorderLayout.NORTH);
+
+        pnlPolicyDetails.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pnlPolicyDetails.setLayout(new java.awt.GridLayout(0, 2, 12, 8));
 
         lblFreeStorageDays1.setText("Policy name:");
@@ -72,7 +79,8 @@ public class ShopPolicyForm extends javax.swing.JFrame {
         pnlPolicyDetails.add(jLabel4);
         pnlPolicyDetails.add(jTextField3);
 
-        getContentPane().add(pnlPolicyDetails);
+        policySectionPanel.add(pnlPolicyDetails, java.awt.BorderLayout.CENTER);
+        getContentPane().add(policySectionPanel);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,6 +137,8 @@ public class ShopPolicyForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblFreeStorageDays;
     private javax.swing.JLabel lblFreeStorageDays1;
     private javax.swing.JPanel pnlPolicyDetails;
+    private javax.swing.JPanel policySectionPanel;
+    private javax.swing.JLabel policyDetailsLabel;
     private javax.swing.JTextField txtFreeStorageDays;
     private javax.swing.JTextField txtPolicyName;
     // End of variables declaration//GEN-END:variables
