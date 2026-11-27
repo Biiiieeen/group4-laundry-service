@@ -1,49 +1,11 @@
 package com.group4.laundry.ui;
 
-import com.group4.laundry.model.Customer;
-import com.group4.laundry.service.CustomerService;
-import javax.swing.JOptionPane;
-import java.util.List;
-import javax.swing.table.DefaultTableModel;
-
+/** Customer management screen. Button actions and persistence are future work. */
 public class CustomerForm extends javax.swing.JFrame {
-    private final CustomerService customerService = new CustomerService();
-   public CustomerForm() {
-    initComponents();
-    setLocationRelativeTo(null);
-    loadCustomers();
-}
-   
-private void loadCustomers() {
-
-    DefaultTableModel model =
-            (DefaultTableModel) tblCustomers.getModel();
-
-    model.setRowCount(0);
-
-    try {
-
-        List<Customer> customers =
-                customerService.getAllCustomers();
-
-        for (Customer customer : customers) {
-
-            model.addRow(new Object[]{
-                customer.getCustomerId(),
-                customer.getCustomerName(),
-                customer.getContactNumber(),
-                customer.getAddress()
-            });
-        }
-
-    } catch (java.sql.SQLException e) {
-
-        JOptionPane.showMessageDialog(this,
-                "Unable to load customers: " + e.getMessage(),
-                "Database Error",
-                JOptionPane.ERROR_MESSAGE);
+    public CustomerForm() {
+        initComponents();
+        setLocationRelativeTo(null);
     }
-}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -128,10 +90,6 @@ private void loadCustomers() {
 
         tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
                 "Customer ID", "Customer Name", "Contact Number", "Address"
@@ -144,89 +102,89 @@ private void loadCustomers() {
         });
         jScrollPane1.setViewportView(tblCustomers);
 
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(155, 155, 155)
-                        .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 291, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(layout.createSequentialGroup()
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
-                                .add(btnAdd)
-                                .add(18, 18, 18)
-                                .add(btnUpdate)
-                                .add(18, 18, 18)
-                                .add(btnDelete)
-                                .add(18, 18, 18)
-                                .add(btnClear))
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, jLabel7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .add(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(btnAdd)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUpdate)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnDelete)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnClear))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 85, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(txtCustomerId, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .add(txtContactNumber))
-                        .add(18, 63, Short.MAX_VALUE)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(layout.createSequentialGroup()
-                                .add(6, 6, 6)
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(txtCustomerName)
-                                    .add(txtAddress, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE))))
-                        .add(28, 28, 28))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, txtSearch)
-                            .add(jScrollPane1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCustomerId, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtContactNumber))
+                        .addGap(18, 63, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCustomerName)
+                                    .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE))))
+                        .addGap(28, 28, 28))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtSearch, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(jLabel2)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel3)
-                    .add(jLabel4))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(txtCustomerId, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(txtCustomerName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel6)
-                    .add(jLabel5))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(txtContactNumber, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(txtAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(18, 18, 18)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(btnAdd)
-                    .add(btnUpdate)
-                    .add(btnDelete)
-                    .add(btnClear))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jLabel7)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(txtSearch, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jScrollPane1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCustomerId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdd)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnDelete)
+                    .addComponent(btnClear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
 
@@ -250,39 +208,7 @@ private void loadCustomers() {
     }//GEN-LAST:event_txtContactNumberActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-
-    try {
-        String name = txtCustomerName.getText().trim();
-        String contact = txtContactNumber.getText().trim();
-        String address = txtAddress.getText().trim();
-
-        Customer customer = new Customer(name, contact, address);
-
-        if (customerService.addCustomer(customer)) {
-
-            JOptionPane.showMessageDialog(this,
-                    "Customer added successfully!");
-
-            // Clear input fields
-            txtCustomerId.setText("");
-            txtCustomerName.setText("");
-            txtContactNumber.setText("");
-            txtAddress.setText("");
-
-            // Refresh customer records table
-            loadCustomers();
-        }
-
-    } catch (IllegalArgumentException e) {
-
-        JOptionPane.showMessageDialog(this, e.getMessage());
-
-    } catch (java.sql.SQLException e) {
-
-        JOptionPane.showMessageDialog(this,
-                "Database error: " + e.getMessage());
-    }
-
+        // Functionality will be implemented in a later stage.
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -302,28 +228,7 @@ private void loadCustomers() {
     }//GEN-LAST:event_txtSearchActionPerformed
 
     private void tblCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCustomersMouseClicked
-        
-    int selectedRow = tblCustomers.getSelectedRow();
-
-    if (selectedRow != -1) {
-
-        txtCustomerId.setText(
-                tblCustomers.getValueAt(selectedRow, 0).toString());
-
-        txtCustomerName.setText(
-                tblCustomers.getValueAt(selectedRow, 1).toString());
-
-        txtContactNumber.setText(
-                tblCustomers.getValueAt(selectedRow, 2) == null
-                ? ""
-                : tblCustomers.getValueAt(selectedRow, 2).toString());
-
-        txtAddress.setText(
-                tblCustomers.getValueAt(selectedRow, 3) == null
-                ? ""
-                : tblCustomers.getValueAt(selectedRow, 3).toString());
-    }
-
+        // Functionality will be implemented in a later stage.
     }//GEN-LAST:event_tblCustomersMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
